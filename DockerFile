@@ -1,12 +1,3 @@
-FROM node:13.10.1
-WORKDIR /usr/src/app
-COPY package*.json ./
-COPY botUA.json ./
-RUN npm install
-COPY . .
-EXPOSE 4000
-CMD ["npm","start"]
-
 FROM debian:stretch-slim
 LABEL maintainer sushain@skc.name
 ENV LANG C.UTF-8
