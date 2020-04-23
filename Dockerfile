@@ -6,9 +6,6 @@ RUN npm install
 COPY . .
 EXPOSE 4000
 CMD ["npm","start"]
-
-FROM debian:stretch-slim
-LABEL maintainer sushain@skc.name
 ENV LANG C.UTF-8
 ADD https://apertium.projectjj.com/apt/apertium-packaging.public.gpg /etc/apt/trusted.gpg.d/apertium.gpg
 RUN chmod 644 /etc/apt/trusted.gpg.d/apertium.gpg
@@ -17,4 +14,3 @@ RUN chmod 644 /etc/apt/preferences.d/apertium.pref
 RUN echo "deb http://apertium.projectjj.com/apt/release stretch main" > /etc/apt/sources.list.d/apertium.list
 RUN apt-get -qq update && apt-get -qq install apertium-all-dev
 ENTRYPOINT ["apertium"]
-© 2020 GitHub, Inc.
